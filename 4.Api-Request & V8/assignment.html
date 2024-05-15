@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GitHub User Card</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #card {
+            background: linear-gradient(90deg, hsla(239, 94%, 14%, 1) 0%, hsla(190, 68%, 50%, 1) 100%);
+            width: 300px;
+            height: 450px;
+            padding: 20px;
+            border: 1px solid #c5bcbc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(52, 201, 77, 0.1);
+        }
+
+        #card :hover {
+            background: linear-gradient(90deg, hsla(239, 94%, 14%, 1) 0%, hsla(190, 68%, 50%, 1) 100%);
+            box-shadow: 0 0 10px #d6860f;
+        }
+        #card img {
+            width: 100%;
+            height: auto;
+        }
+        #card h2, #card p {
+            margin: 0 0 10px 0;
+        }
+        #card button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 18px 18px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            height: auto;
+            width: 100%;
+            transition: background-color 0.3s ease;
+            border-radius: 25px;
+        }
+       
+        #card button:hover {
+            background-color: #b23434;
+            box-shadow: 0 0 10px #d6860f;
+        }
+    </style>
+    
+    <div id="card"></div>
+    
+    <script>
+        const requestUrl = 'https://api.github.com/users/imdevesh21'
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', requestUrl);
+        xhr.onreadystatechange = function() {
+            if(xhr.readyState === 4){
+                const data = JSON.parse(xhr.responseText);
+                const card = document.getElementById('card');
+                card.innerHTML = `
+                    <img src="${data.avatar_url}" alt="Profile Picture" />
+                    <h2>${data.login}</h2>
+                    <p>Followers: ${data.followers}</p>
+                    <p>Repositories: ${data.public_repos}</p>
+                    <button onclick="window.location.href='${data.html_url}'">More Info</button>
+                `;
+            }
+        }
+        xhr.send();
+    </script>
+    

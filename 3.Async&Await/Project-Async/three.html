@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="greeting">hello, devesh a software developer! from google</h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+    <script>
+      // let intervalId;
+      // const sayDate = function(str) {
+      //     console.log(str, 'hello', Date.now());
+      // }
+
+      // const start = document.querySelector('#start');
+      // const stop = document.querySelector('#stop');
+
+      // stop.addEventListener('click', function() {
+      //     clearInterval(intervalId);
+      // })
+
+      // start.addEventListener('click', function() {
+      //     intervalId = setInterval(function() {
+      //         sayDate('hello');
+      //     },1000);
+      // })
+      let intervalId;
+      const greeting = document.querySelector("#greeting");
+
+      const sayDate = function (str) {
+        greeting.textContent = str + " " + new Date();
+      };
+
+      const start = document.querySelector("#start");
+      const stop = document.querySelector("#stop");
+
+      stop.addEventListener("click", function () {
+        clearInterval(intervalId);
+      });
+
+      start.addEventListener("click", function () {
+        intervalId = setInterval(function () {
+          sayDate(
+            "Hello, Devesh a software developer! From Google. Current time is:"
+          );
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>

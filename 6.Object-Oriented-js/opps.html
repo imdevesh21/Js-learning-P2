@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //   const user = {
+    //     username: "Devesh",
+    //     email: "devesh@gmail.com",
+    //     password: 123456,
+    //     signedIn: true,
+    //     getUserDetails: function () {
+    //       return (
+    //         this.username +
+    //         " " +
+    //         this.email +
+    //         " " +
+    //         this.password +
+    //         " " +
+    //         this.signedIn
+    //       );
+    //     },
+    //   };
+
+
+    //   const user2 = {
+    //     Username: "debu",
+    //     Age: 23,
+    //     Email: "debu@gmail.com",
+    //     password: 'nice@123',
+
+    //     getUserDetailsTwo: function () {
+    //                 return (
+    //                     this.Username +
+    //                     " " +
+    //                     this.Age +
+    //                     " " +
+    //                     this.Email +            
+    //                     " " +
+    //                     this.password
+    //                 );
+    //             },
+    //         };
+    //         console.log(user2.getUserDetailsTwo());
+    //         console.log(user.getUserDetails());
+    //         console.log([user.username]);
+
+
+    // by standalone function 
+
+    // const user = {
+    //     username: "devesh",
+    //     age: 23,
+    //     mail: "devesh@gmail.com",
+    //     password: 123456
+    // };
+
+    // function getUserDetails(user){
+    //     return (
+    //         user.username +
+    //         user.age +
+    //         user.mail +
+    //         user.password
+    //     );
+    // }
+
+    // console.log(getUserDetails)
+
+    // constructor function
+
+    // const promise = new Promise();
+    // const date = new Date();
+
+
+    function User(username, loginCount, isLoggedIn) {
+        this.username = username;
+        this.loginCount = loginCount;
+        this.isLoggedIn = isLoggedIn;
+
+        this.greeting = function(){
+            // return "Hello " + this.username;
+            console.log(`Welcome ${this.username}`)
+        }
+        return this
+    }
+
+    const userOne = new User("devesh", 12, true)
+    // const userTwo = new User("chai aur code", 11, false);
+    console.log(userOne.constructor);
+    // console.log(userTwo);
+
+    // step 1 new object
+    // step 2 constructor function call by using a new keyword
+    // step 3 because of this keyword our written arguments get inside it
+    // step 4 return object
+
+    
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>
